@@ -1,0 +1,105 @@
+@import './settings.scss';
+/* ======================================================================= */
+                    /* 375 PX */
+/* ======================================================================= */
+
+@media screen and (min-width: 374px) {
+    #header-container {
+        width: 90%;
+    }
+    nav {
+        ul{
+            flex-direction: row;
+        }
+        .nav-about {
+            margin-top: 0;
+            margin-left: clamp(12px,calc(5vw - 4px),57px);
+        }
+    }
+}
+
+/* ======================================================================= */
+                    /* 425 PX */
+/* ======================================================================= */
+
+@media screen and (min-width: 424px) {
+    #main-home {
+        #main-home-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 0;
+        }
+        #main-article-box {
+            background: $bg-secondary-color;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: auto;
+        }
+
+        #banner-content h1{
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #main-404 {
+        #main-error-container {
+            p {
+                flex-direction: row;
+            }
+        }
+    }
+
+}
+/* ======================================================================= */
+                    /* 768 PX */
+/* ======================================================================= */
+
+@media screen and (min-width: 756px) {
+
+    footer {
+        padding: 66px 0px 30px;
+        #footer-copyright {
+            flex-direction: row;
+        }
+    }
+    #main-home{
+        #main-article-box {
+            justify-content: space-between;
+            align-items: space-between;
+    }
+    }
+    #logement-content-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #logement-content-title-tags {
+        width: auto;
+    }
+    #logement-content-host-rating {
+        flex-direction: column;
+        width: auto;
+
+    }
+    #logement-collapse-container{
+        justify-content: space-between;
+    }
+}
+
+
+/* ======================================================================= */
+                    /* 1440 PX */
+/* ======================================================================= */
+
+@media screen and (min-width: 1439px) {
+    #footer-copyright{
+        padding-top: 4vh;
+
+    }
+}
+
+

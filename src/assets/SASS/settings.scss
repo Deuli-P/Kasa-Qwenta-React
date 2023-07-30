@@ -1,0 +1,99 @@
+// VARIABLES
+
+$main-color : #FF6060 ;
+$secondary-color: #FFF;
+$text-color: #FF6060 ;
+$text-color-footer: #FFF ;
+$bg-primary-color: #FFF;
+$bg-secondary-color: #F6F6F6;
+$btn-color: #FFF;
+
+
+//FONT
+$font-text: 'Montserrat';
+$font-size-header-footer : clamp(12px,4vw,24px);
+$font-size-article : 18px;
+$font-size-banner:clamp(24px,4vw, 48px);
+$font-size-collapse-title: clamp(13px, calc(13px + calc((24 - 13) / (1440 - 375)) * (100vw - 375px)), 24px);
+$font-size-error404: clamp(96px, calc(96px + calc((288 - 96) / (1440 - 375)) * (100vw - 375px)), 288px);
+$font-size-errorP: clamp(18px, calc(18px + calc((36 - 18) / (1440 - 375)) * (100vw - 375px)), 36px);
+$font-size-errorA: clamp(14px, calc(14px + calc((18 - 14) / (1440 - 375)) * (100vw - 375px)), 18px);
+
+// FUNCTION 
+
+// @function clamping($min , $max , $Wmin ,$Wmax){
+//     $clamp: clamp($min px, calc($min px + calc(($max - $min) / ($Wmax - $Wmin)) * (100vw - $min px)), $max px );
+//     @return $clamp;
+// }
+// MIXINS
+
+@mixin names {
+
+}
+
+@mixin name {
+
+}
+
+
+// BASE 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    background-color: $bg-primary-color;
+    font-family: $font-text;
+}
+ul li{
+    list-style: none;
+}
+a,a:visited{
+    text-decoration: none;
+}
+
+
+// ANIMATION 
+
+@keyframes opacityUpAnimation {
+    from {opacity: 0;}
+    to{opacity: 1;}
+};
+
+@keyframes opacityDownAnimation {
+    from {opacity: 1;}
+    to{opacity: 0;}
+};
+
+@keyframes slideInCollapseAnimation {
+    from{
+        transform: translateY(-5px);
+    }
+    to{
+        transform: translateY(-400px)
+    }
+};
+@keyframes slideOutCollapseAnimation {
+    from{
+        transform: translateY(-400px);
+    }
+    to{
+        transform: translateY(-5px)
+    }
+};
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0%)
+    }
+    to {
+        transform: rotate(180%)
+    }
+    
+};
+
