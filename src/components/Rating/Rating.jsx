@@ -4,8 +4,6 @@ const Rating = ({ note }) => {
   const stars = Array.from({ length: 5 }, (_, index) => (index < note ? 1 : 0));
 
   useEffect(() => {
-    console.log("note: ", note);
-    console.log("Étoiles mises à jour :", stars);
   }, [note, stars]); // Ajout de "stars" dans le tableau de dépendances
 
   return (

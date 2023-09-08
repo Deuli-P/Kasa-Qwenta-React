@@ -25,11 +25,8 @@ export function getLogementData (id){
   return (data.find(item => item.id === id));
 }
 
-
-
 function App() {
   const homeData = ArticlesData();
-
 
   return (
     <>
