@@ -21,25 +21,28 @@ function ArticlesData(){
 )
 }
 
-export function getLogementData (id){
-  return (data.find(item => item.id === id));
-}
 
 function App() {
   const homeData = ArticlesData();
 
+  
+
   return (
     <>
-    <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home data={homeData}/>}/>
           <Route path="/about" element={<About />}/>
           <Route path="/logement/:id"element={<Logement data={data}/>}/>
           <Route path="/*" element={<Error404 />}/>
+          {/* // probleme de 404 pour logement : DONE
+              // probleme de about depuis logement : DONE
+              // refaire le sliders : 
+          */}
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
   </>
   )
 }

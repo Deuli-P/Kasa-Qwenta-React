@@ -1,7 +1,5 @@
 @import './settings.scss';
-// @import 'swiper/scss';
-// @import 'swiper/scss/navigation';
-// @import 'swiper/scss/pagination';
+
 /* ======================================================================= */
                     /* HEADER */
 /* ======================================================================= */
@@ -39,10 +37,11 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         list-style: none;
         font-size: $font-size-header-footer;
-        li a{
+        & a{
             color:$text-color;
             &:hover{
                 text-decoration: underline;
@@ -51,13 +50,15 @@ nav {
                 text-decoration: none;
                 color:$text-color;
             }
+            &:last-child{
+                margin-top: 12px;
+                margin-left: 0px;
+            }
 
         }
+        
     }
-    .nav-about{
-        margin-top: 12px;
-        margin-left: 0px;
-    }
+   
 }
 
 /* ======================================================================= */
@@ -436,7 +437,68 @@ footer{
                            /* SLIDE */
 /* ======================================================================= */
 
-                /* Go to /component/SlideShow/swiper.css */
+#caroussel_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    .sliders{
+        width: 100%;
+        height: clamp(255px, calc(255px + calc((415 - 255) / (1440 - 750)) * (100vw - 750px)), 415px);
+        overflow: hidden;
+        border-radius: 15px;
+        .inactive{
+            display: none;
+        }
+        .active{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;}
+        }
+    }
+    .caroussel_navigation_container{
+        position: absolute;
+        top: 50%;
+        justify-content: space-between;
+        width: 100%;
+        .NavigationSlider{
+            width: auto;
+            height: clamp(24px, calc(24px + calc((79 - 24) / (1440 - 750)) * (100vw - 750px)), 79px);
+            filter:invert(100%);
+            &:active{
+                filter:invert(95%);
+            }
+        }
+        .arrowLeft{
+            position: absolute;
+            left: 0;
+            transform: rotate(180deg);
+        }
+        .arrowRight{
+            right: 0;
+            position: absolute;
+        } 
+   }
+   .pagination{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    h5{
+        color:$text-color-footer;
+        font-size: clamp(18px, calc(18px + calc((24 - 18) / (1440 - 750)) * (100vw - 750px)), 24px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 142.6%;
+    }
+   }
+}
 
 /* ======================================================================= */
                            /* MEDIA QUERY */
