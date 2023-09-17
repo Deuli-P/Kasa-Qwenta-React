@@ -1,5 +1,7 @@
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
+    const location = useLocation();
     return (
         <>
             <header>
@@ -15,8 +17,8 @@ const Header = () => {
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="/">Accueil</a></li>
-                            <li className='nav-about'><a href="about">À Propos</a></li>
+                            <NavLink to={"/"} className={location.pathname === "/" ? "active" : ""}>Accueil</NavLink>
+                            <NavLink to={"/about"} className={location.pathname === "/about" ? "active" : ""}>À Propos</NavLink>
                         </ul>
                     </nav>
                 </div>

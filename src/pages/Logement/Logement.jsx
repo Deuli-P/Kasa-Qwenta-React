@@ -1,28 +1,41 @@
-import { useParams } from 'react-router-dom';
-import { getLogementData } from '../../App';
-import MyComponent from "../../components/SlideShow/Swiper";
+import { useParams, useNavigate } from 'react-router-dom';
 import Collapsible from '../../components/Collapse/Collapse';
 import Rating from '../../components/Rating/Rating';
+import { useEffect } from 'react';
+import data from "../../assets/images/image.json";
+import Slider from '../../components/SlideShow/Slider';
 
-function Logement({ data }) {
-  const { id } = useParams();
-  const logementData = getLogementData(id);
+function Logement() {
+
+  const params = useParams();
+  const id = params.id;
+  const navigate = useNavigate();
+  const logementData = data.find((item) => item.id === id);
 
 
-  // Utilisez la déstructuration pour obtenir les différentes informations du logement
-  const { title, pictures, description, host, rating, location, equipments, tags } = logementData;
+  useEffect(() => {
+    if(!logementData){
+      navigate('*')
+    }
+  },[logementData,navigate]);
 
-  return (
-    <>
-    <main id="main-logement">
+  if(logementData){
+
+    // Utilisez la déstructuration pour obtenir les différentes informations du logement
+    const { title, pictures, description, host, rating, location, equipments, tags } = logementData;
+    
+
+    const renderView = (
+      <main id="main-logement">
       {pictures.length > 1 
-      ? (<MyComponent pictures={pictures} />) 
+      ? (<Slider pictures={pictures} />) 
       : (
         <div id="slide-show">
           <img src={pictures[0]} alt={title} className="slide-image" id="slide-current"/>
         </div>
           )
       }
+
       <div id="logement-content-container">
         <div id="logement-content-title-tags">
           <h1>{title}</h1>
@@ -49,8 +62,15 @@ function Logement({ data }) {
       </div>
     
     </main>
-  </>
-  );
+    );
+
+
+    return (
+      <>
+      {renderView}
+    </>
+    );
+  }
 }
 
 export default Logement;
