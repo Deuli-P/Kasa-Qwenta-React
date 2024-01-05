@@ -1,5 +1,31 @@
-# Kasa-Qwenta-React
+# Projet: Kasa-Qwenta-React
 
-Suite a une erreur de manip j'ai changé le repository du projet mais j'ai encore le lien du repository avec toutes les branchs:
+Client: Openclassrooms
 
-https://github.com/Deuli-P/Kasa-React-projet
+#Mission:
+Build frontend React website.
+
+# Technologies:
+-ViteJs
+- Javascript
+- SASS
+- - React
+  - - React Router -.
+
+# Build
+- clone git: 
+- start local server ```npm run dev```
+-  build to host static website: ```npm run build```
+-  Copy all the "dist" files.
+-  Paste on hosting service.
+
+
+# Project Structure
+
+```
+Kasa/
+├──
+├──
+├──
+├──
+├──
