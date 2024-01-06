@@ -6,7 +6,7 @@ Client: Openclassrooms
 Build frontend React website.
 
 # Technologies:
--ViteJs
+- ViteJs
 - Javascript
 - SASS
 -  React
@@ -57,3 +57,9 @@ Kasa/
       ├── _index.scss                   # rules to SCSS
     ├── images/                         # All the images used on the website.
 ```
+
+# Features
+
+- Show error screen if the url is wrong
+- Automatic generation of product with react component Articles and Logement screen
+- Navigation React router.
